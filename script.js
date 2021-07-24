@@ -85,13 +85,14 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
 document.querySelector('#book-form').addEventListener('submit', 
 (e) => {
+    e.preventDefault(); 
     // Get form values
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const isbn = document.querySelector('#isbn').value;
 
     // validate
-    if(title === ' ' || author === ' ' || isbn== ' ') {
+    if(!title  || !author  || !isbn && title === ' ' || author === ' ' || isbn === ' ') {
        UI.showAlert('please fill all fields', 'danger');
     } else {
 // Instantiate book

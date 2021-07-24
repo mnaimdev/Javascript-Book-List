@@ -102,7 +102,7 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
    *
    *
    */
-  if (!title || !author || !isbn) {
+  if (!title || !author || !isbn  && title === ' ' || author === ' ' || isbn === ' ') {
     UI.showAlert("please fill all fields", "danger");
   } else {
     // Instantiate book
